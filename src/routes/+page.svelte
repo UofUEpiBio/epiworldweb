@@ -29,25 +29,13 @@
 				</Unimplemented>
 			</div>
 		</header>
-		<!-- <main class="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
-			<div class="relative w-1/3 flex-none">
-				<PropertyEditor />
-			</div>
-			<div class="relative w-2/3 flex-auto">
-				<ViewZone />
-			</div>
-		</main> -->
 
 		<main class="flex h-[calc(100vh-4rem)] gap-4">
 			<div class="h-full w-1/3 overflow-y-auto p-4">
-				<!-- <div class="h-[64rem] w-auto rounded-xl bg-blue-50"></div> -->
 				<PropertyEditor />
 			</div>
 
 			<div class="h-full w-2/3 overflow-y-auto p-4 py-6">
-				<!-- <div class="w-auto rounded-xl bg-red-50">
-					<div class="col-span-2 flex-1 flex-col" />
-				</div> -->
 				<ViewZone />
 			</div>
 		</main>

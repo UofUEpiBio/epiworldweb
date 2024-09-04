@@ -1,4 +1,19 @@
-import { generate_code as generate_python_code } from './python';
-import { generate_code as generate_r_code } from './r';
+import { generateCode as generatePythonCode } from './python';
+import { generateCode as generateRCode } from './r';
 
-export { generate_python_code, generate_r_code };
+export { generatePythonCode, generateRCode };
+
+export const interactionLanguages = [
+	{
+		name: 'Python',
+		description: 'Via Pyodide & EpiworldPy.'
+	},
+	{
+		name: 'R',
+		description: 'Via WebR & EpiworldR.'
+	},
+	{
+		name: 'None',
+		description: 'Just let me export.'
+	}
+];

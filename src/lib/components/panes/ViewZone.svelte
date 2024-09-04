@@ -2,7 +2,9 @@
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
-	import Welcome from '$lib/components/panes/content/Welcome.svelte';
+	import Block from './Block.svelte';
+	import { blocks } from '$lib/stores/blockStore';
+	import { BlockType } from '$lib/block';
 
 	let code = '';
 
@@ -39,7 +41,13 @@
 		const code = formData.get('code');
 
 		/* Send a message saying we've got some code to run. */
-		alert(code);
+		blocks.update((currentBlocks) => [
+			...currentBlocks,
+			{
+				type: BlockType.Code,
+				content: String(code)
+			}
+		]);
 
 		/* Cleanup. */
 		textarea.value = '';
@@ -53,9 +61,10 @@
 <div class="relative col-span-2 h-fit min-h-full flex-col rounded-xl bg-muted/50 p-4">
 	<Badge variant="outline" class="absolute right-3 top-3">Output</Badge>
 
-	<div class="prose prose-slate m-4 max-w-none flex-1 dark:prose-invert">
-		<Welcome />
-	</div>
+	{#each $blocks as block}
+		<Block type={block['type']} content={block['content']} />
+		<hr />
+	{/each}
 
 	<form
 		on:submit|preventDefault={codeBoxSubmit}
