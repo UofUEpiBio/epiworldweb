@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: "epiworldweb: WebAssembly Port of epiworld"
+version: "0.0.1"
+authors:
+  - family-names: "Banks"
+    given-names: "Olivia"
+  - family-names: "Vega Yon"
+    given-names: "George G."
+    orcid: "https://orcid.org/0000-0002-3171-0844"
+abstract: "A browser application that ports the epiworld epidemiological agent-based modeling framework to WebAssembly."
+repository-code: "https://github.com/UofUEpiBio/epiworldweb"
+keywords:
+  - "epidemiology"
+  - "agent-based models"
+  - "WebAssembly"
